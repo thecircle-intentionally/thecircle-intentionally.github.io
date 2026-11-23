@@ -119,6 +119,8 @@
     margin-top:10px;cursor:pointer;text-decoration:none}
   .sheet .gold{background:var(--gold);color:#1a1410;border:0}
   .sheet .ghost{background:none;color:var(--ivory);border:1px solid var(--line)}
+  .copyfield{width:100%;background:#0b0a09;border:1px dashed var(--gold);color:var(--gold2);border-radius:10px;padding:13px 12px;font:500 15px Inter,sans-serif;text-align:center;-webkit-user-select:all;user-select:all}
+  .sheet p.small{font-size:12px;text-align:center;margin:8px 0 0}
   .sheet .close{background:none;border:0;color:var(--muted);font-size:13px;margin-top:12px}
 
   /* in-app browser banner */
@@ -152,15 +154,15 @@
   </header>
 
   <div class="btns reveal r4">
-    <a class="btn main tg" data-tg="TheCircleMatchBot" href="https://t.me/TheCircleMatchBot">
+    <a class="btn main tg" data-copy="TheCircleMatchBot" data-kind="name" href="https://t.me/TheCircleMatchBot">
       <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm-1 7V3.5L18.5 9zM8 13h8v2H8zm0 4h5v2H8z"/></svg>
       <span class="t"><b data-i="b1"></b><small data-i="b1s"></small></span><span class="arr">›</span>
     </a>
-    <a class="btn tg" id="chan" href="https://t.me/CHANNEL_LINK">
+    <a class="btn tg" id="chan" data-copy="https://t.me/+2iRcqyzNdB0zN2Vk" data-kind="link" href="https://t.me/+2iRcqyzNdB0zN2Vk">
       <svg viewBox="0 0 24 24"><path d="M21.9 4.6 18.7 19.8c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.2 13.4l-4.9-1.5c-1-.3-1.1-1 .2-1.5L20.6 3c.9-.3 1.6.2 1.3 1.6z"/></svg>
       <span class="t"><b data-i="b2"></b><small data-i="b2s"></small></span><span class="arr">›</span>
     </a>
-    <a class="btn tg" data-tg="thecirclero" href="https://t.me/thecirclero">
+    <a class="btn tg" data-copy="thecirclero" data-kind="name" href="https://t.me/thecirclero">
       <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2zm3 6v2h2v-2zm4 0v2h2v-2zm4 0v2h2v-2z"/></svg>
       <span class="t"><b data-i="b3"></b><small data-i="b3s"></small></span><span class="arr">›</span>
     </a>
@@ -198,7 +200,7 @@
   <section>
     <p class="quote" data-i="quote"></p>
     <div class="btns cta2">
-      <a class="btn main tg" data-tg="TheCircleMatchBot" href="https://t.me/TheCircleMatchBot">
+      <a class="btn main tg" data-copy="TheCircleMatchBot" data-kind="name" href="https://t.me/TheCircleMatchBot">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm-1 7V3.5L18.5 9zM8 13h8v2H8zm0 4h5v2H8z"/></svg>
         <span class="t"><b data-i="b1"></b><small data-i="cta2s"></small></span><span class="arr">›</span>
       </a>
@@ -213,9 +215,10 @@
 <div class="sheet" id="sheet"><div class="box">
   <h3 data-i="sh_t"></h3>
   <p data-i="sh_p"></p>
-  <ol><li data-i="sh_1"></li><li data-i="sh_2"></li></ol>
+  <ol><li data-i="sh_1"></li><li id="sh_2"></li></ol>
+  <input class="copyfield" id="sh_field" readonly>
   <button class="sb gold" id="sh_copy" data-i="sh_copy"></button>
-  <a class="sb ghost" id="sh_safari" data-i="sh_safari" href="#"></a>
+  <p class="small" data-i="sh_hold"></p>
   <button class="sb close" id="sh_close" data-i="sh_close"></button>
 </div></div>
 <div class="toast" id="toast"></div>
@@ -226,8 +229,8 @@ ru:{
  sh_t:"Telegram не открывается из TikTok",
  sh_p:"TikTok блокирует переход в Telegram. Есть два простых способа:",
  sh_1:"Нажми <b>⋯</b> вверху справа → <b>«Открыть в браузере»</b>, затем снова нажми кнопку.",
- sh_2:"Или скопируй имя и вставь его в поиск Telegram: <b>__NAME__</b>",
- sh_copy:"Скопировать имя",sh_safari:"Попробовать открыть в Safari",sh_close:"Закрыть",
+ sh_2n:"Или скопируй имя и вставь его в поиск Telegram:",sh_2l:"Или скопируй ссылку и вставь её в Safari или Chrome:",
+ sh_copy:"Скопировать",sh_hold:"Если кнопка не копирует — нажми на поле и удерживай",sh_close:"Закрыть",
  lead:"Знакомства для тех, кто ищет серьёзные отношения — а не бесконечную переписку.",
  sub:"Украинцы и молдаване по всей Европе, в Молдове и Украине. Каждого участника проверяет живая команда по видеозвонку. Анонимно.",
  b1:"Заполнить анкету",b1s:"Telegram-бот · начни здесь",
@@ -254,8 +257,8 @@ uk:{
  sh_t:"Telegram не відкривається з TikTok",
  sh_p:"TikTok блокує перехід у Telegram. Є два прості способи:",
  sh_1:"Натисни <b>⋯</b> угорі праворуч → <b>«Відкрити в браузері»</b>, потім знову натисни кнопку.",
- sh_2:"Або скопіюй ім'я та встав у пошук Telegram: <b>__NAME__</b>",
- sh_copy:"Скопіювати ім'я",sh_safari:"Спробувати відкрити в Safari",sh_close:"Закрити",
+ sh_2n:"Або скопіюй ім'я та встав у пошук Telegram:",sh_2l:"Або скопіюй посилання та встав його в Safari чи Chrome:",
+ sh_copy:"Скопіювати",sh_hold:"Якщо кнопка не копіює — натисни на поле й утримуй",sh_close:"Закрити",
  lead:"Знайомства для тих, хто шукає серйозні стосунки — а не нескінченне листування.",
  sub:"Українці та молдовани по всій Європі, в Молдові та Україні. Кожного учасника перевіряє жива команда по відеодзвінку. Анонімно.",
  b1:"Заповнити анкету",b1s:"Telegram-бот · почни тут",
@@ -282,8 +285,8 @@ en:{
  sh_t:"Telegram won't open from TikTok",
  sh_p:"TikTok blocks links to Telegram. Two easy ways:",
  sh_1:"Tap <b>⋯</b> top right → <b>\u201cOpen in browser\u201d</b>, then tap the button again.",
- sh_2:"Or copy the name and paste it into Telegram search: <b>__NAME__</b>",
- sh_copy:"Copy name",sh_safari:"Try opening in Safari",sh_close:"Close",
+ sh_2n:"Or copy the name and paste it into Telegram search:",sh_2l:"Or copy the link and paste it into Safari or Chrome:",
+ sh_copy:"Copy",sh_hold:"If the button doesn't copy — press and hold the field",sh_close:"Close",
  lead:"Introductions for people looking for a serious relationship — not endless chatting.",
  sub:"Ukrainians and Moldovans across Europe, Moldova and Ukraine. Every member is personally verified by our team on a video call. Anonymous.",
  b1:"Fill in the form",b1s:"Telegram bot · start here",
@@ -310,8 +313,8 @@ ro:{
  sh_t:"Telegram nu se deschide din TikTok",
  sh_p:"TikTok blochează trecerea în Telegram. Două variante simple:",
  sh_1:"Apasă <b>⋯</b> sus în dreapta → <b>\u201eDeschide în browser\u201d</b>, apoi apasă din nou butonul.",
- sh_2:"Sau copiază numele și lipește-l în căutarea Telegram: <b>__NAME__</b>",
- sh_copy:"Copiază numele",sh_safari:"Încearcă să deschizi în Safari",sh_close:"Închide",
+ sh_2n:"Sau copiază numele și lipește-l în căutarea Telegram:",sh_2l:"Sau copiază linkul și lipește-l în Safari sau Chrome:",
+ sh_copy:"Copiază",sh_hold:"Dacă butonul nu copiază — ține apăsat pe câmp",sh_close:"Închide",
  lead:"Cunoștințe pentru cei care caută o relație serioasă — nu conversații fără sfârșit.",
  sub:"Ucraineni și moldoveni din toată Europa, din Moldova și Ucraina. Fiecare participant este verificat personal de echipa noastră printr-un apel video. Anonim.",
  b1:"Completează chestionarul",b1s:"Bot Telegram · începe aici",
@@ -351,38 +354,34 @@ const isAndroid=/Android/i.test(ua);
 if(inApp) document.body.classList.add('inapp');
 
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200)}
-document.getElementById('copy').onclick=()=>{
-  const v='TheCircleMatchBot';
-  (navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).then(()=>toast(T[L].copied)).catch(()=>{
-    const i=document.createElement('input');i.value=v;document.body.appendChild(i);i.select();try{document.execCommand('copy');toast(T[L].copied)}catch(e){};i.remove()});
-};
+document.getElementById('copy').onclick=()=>openSheet('TheCircleMatchBot','name');
 
 /* Telegram buttons */
-const isIOS=/iPhone|iPad|iPod/i.test(ua);
-let curName='TheCircleMatchBot', curHref='https://t.me/TheCircleMatchBot';
+let cur={copy:'TheCircleMatchBot',kind:'name'};
 function copyText(v){
-  return (navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).catch(()=>{
-    const i=document.createElement('input');i.value=v;document.body.appendChild(i);i.select();try{document.execCommand('copy')}catch(e){};i.remove()});
+  return new Promise((res,rej)=>{
+    const fallback=()=>{
+      const f=document.getElementById('sh_field');
+      try{f.removeAttribute('readonly');f.focus();f.select();f.setSelectionRange(0,999);
+        const ok=document.execCommand('copy');f.setAttribute('readonly','');f.blur();ok?res():rej();}catch(e){rej()}
+    };
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(v).then(res,fallback)}else fallback();
+  });
 }
-function openSheet(name,href){
-  curName=name;curHref=href;
+function renderSheet(){
   const sh=document.getElementById('sheet');
-  sh.querySelectorAll('[data-i]').forEach(e=>{e.innerHTML=T[L][e.dataset.i].replace('__NAME__',name)});
-  const saf=document.getElementById('sh_safari');
-  if(isIOS){saf.style.display='block';saf.href='x-safari-'+location.href.split('#')[0];}else saf.style.display='none';
-  document.getElementById('sh_copy').style.display=name?'block':'none';
-  sh.classList.add('on');
+  sh.querySelectorAll('[data-i]').forEach(e=>{e.innerHTML=T[L][e.dataset.i]});
+  document.getElementById('sh_2').innerHTML=cur.kind==='link'?T[L].sh_2l:T[L].sh_2n;
+  document.getElementById('sh_field').value=cur.copy;
 }
+function openSheet(copy,kind){cur={copy,kind};renderSheet();document.getElementById('sheet').classList.add('on');}
 document.getElementById('sh_close').onclick=()=>document.getElementById('sheet').classList.remove('on');
 document.getElementById('sheet').onclick=e=>{if(e.target.id==='sheet')e.currentTarget.classList.remove('on')};
-document.getElementById('sh_copy').onclick=()=>copyText(curName).then(()=>toast(T[L].copied));
+document.getElementById('sh_field').onclick=e=>{e.target.select();e.target.setSelectionRange(0,999)};
+document.getElementById('sh_copy').onclick=()=>copyText(cur.copy).then(()=>toast(T[L].copied),()=>{const f=document.getElementById('sh_field');f.select();f.setSelectionRange(0,999)});
 document.querySelectorAll('a.tg').forEach(a=>a.addEventListener('click',ev=>{
-  const href=a.getAttribute('href');
-  if(!/^https:\/\/t\.me\//.test(href)) return;
-  const path=href.replace('https://t.me/','').split('?')[0];
-  const name=(path.startsWith('+')||path.startsWith('joinchat/'))?'':path;
-  if(inApp){ ev.preventDefault(); openSheet(name,href); return; }
-  /* normal browsers: let t.me handle it (opens the Telegram app) */
+  if(!inApp) return; /* Safari/Chrome: t.me opens the Telegram app */
+  ev.preventDefault(); openSheet(a.dataset.copy,a.dataset.kind);
 }));
 </script>
 </body>
